@@ -1,5 +1,8 @@
 package com.lovemesomecoding.solid.user;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import lombok.extern.slf4j.Slf4j;
@@ -24,6 +27,19 @@ public class AdminUserServiceImp implements AdminUserService {
 		adminUser.addClient(user);
 
 		return true;
+	}
+
+	@Override
+	public boolean notifyAllUsersOfDayOff() {
+		List<User> users = new ArrayList<>();
+		users.add(new User());
+		users.add(new AdminUser());
+		
+		/**
+		 * call the UserNotificationService.sendEmail(...) to send the notification
+		 */
+		
+		return false;
 	}
 
 }
